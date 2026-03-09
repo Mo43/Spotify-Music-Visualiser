@@ -20,7 +20,11 @@
 ## 22 feb 2026
 - returned top 10 songs to the website by using render template to loop inside of a html file, also used jinja2 syntax.
 
-## 23 feb 2026
-- 
+## 09 Mar 2026
+- Converted Ms to Minutes using python, added a Music player. Will consider adding a visualiser later with java script and webplay sdk
+
+
+
+
 
 

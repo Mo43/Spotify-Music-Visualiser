@@ -8,7 +8,7 @@ def setup_database():
         id TEXT PRIMARY KEY,
         name TEXT,
         artist TEXT,
-        album TEXT,
+        albums TEXT,
         duration_ms INTEGER,
         popularity INTEGER
     )
@@ -22,7 +22,7 @@ def save_tracks(results):
     
     for track in results['items']:
         cursor.execute('''
-    INSERT OR IGNORE INTO tracks (id, name, artist, album, duration_ms, popularity)
+    INSERT OR IGNORE INTO tracks (id, name, artist, albums, duration_ms, popularity)
     VALUES (?, ?, ?, ?, ?, ?)
 ''', (
     track.get('id'),

@@ -9,9 +9,22 @@
     <ul class="list-group">
         {% for song in songs %}
             <li class="list-group-item bg-secondary text-white">
-                {{ loop.index }}. {{ song[0] }} by {{ song[1] }} | {{ song[2] }} | {{ song[3] }}ms | Popularity: {{ song[4] }}            
+                {{ loop.index }}. {{ song[0] }} by {{ song[1] }} | {{ song[2] }} | {{ song[3] }} | Popularity: {{ song[4] }}            
             </li>
         {% endfor %}
     </ul>
 </body>
 </html>
+
+<iframe 
+    src="https://open.spotify.com/embed/playlist/2ADpenqb7wGYgNUyUPmtEG?autoplay=1" 
+    width="350" 
+    height="100" 
+    frameborder="0" 
+    allowtransparency="true" 
+    allow="encrypted-media; autoplay"
+    style="position: fixed; bottom: 20px; right: 20px; border-radius: 12px;">
+</iframe>
+
+
+

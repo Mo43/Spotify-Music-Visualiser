@@ -16,10 +16,17 @@ sp = spotipy.Spotify(auth_manager = SpotifyOAuth(
 
 results = sp.current_user_top_tracks(limit=10)
 
+track_ids = [track['id'] for track in results['items']]
+full_tracks = sp.tracks(track_ids)
+
+for i, track in enumerate(full_tracks['tracks']):
+    results['items'][i]['popularity'] = track['popularity']
+
 
 for i, track in enumerate(results['items']):
     #print(track)
     print(i+1, track['name'], "by", track['artists'][0]['name'])
+
     
     
 setup_database()
