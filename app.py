@@ -20,6 +20,14 @@ def home():
     converted_songs = [(s[0],s[1], s[2], ms_to_minutes(s[3]),s[4]) for s in songs]
     return render_template('index.html', songs = converted_songs)
 
+@app.route('/artists')
+def artists():
+    conn = sqlite3.connect("music.db")
+    cursor = conn.cursor()
+    cursor.execute ("SELECT name, genres, popularity, followers from artists")
+    artists = cursor.fetchall()
+    conn.close()
+    return render_template('artists.html', artists=artists)
 
 
 

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1 class="mb-4">🎵 My Top Tracks</h1>
+    <h1 class="mb-4">🎤 My Top Artists</h1>
     <ul class="list-group">
-        {% for song in songs %}
+        {% for artist in artists %}
             <li class="list-group-item bg-secondary text-white">
-                {{ loop.index }}. {{ song[0] }} by {{ song[1] }} | {{ song[2] }} | {{ song[3] }} | Popularity: {{ song[4] }}
+                {{ loop.index }}. {{ artist[0] }}
             </li>
         {% endfor %}
     </ul>
