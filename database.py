@@ -63,7 +63,7 @@ def save_artists(results):
     artist.get('name'),
     ', '.join(artist.get('genres', [])),
     artist.get('popularity'),
-artist.get('followers', {}).get('total', 0)
+    (artist.get('followers') or {}).get('total')
 ))
     conn.commit()
     conn.close()

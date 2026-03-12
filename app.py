@@ -29,8 +29,7 @@ def artists():
     conn.close()
     return render_template('artists.html', artists=artists)
 
-
-
 if __name__ == "__main__":
     app.run(debug=True)
+
 

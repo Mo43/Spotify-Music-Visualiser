@@ -20,7 +20,17 @@ for i, track in enumerate(results['items']):
 
 for i, artist in enumerate(artist_results['items']):
     print(i+1, artist['name'])
+
+
+
 setup_database()
 save_tracks(results)
 setup_artists_table()
 save_artists(artist_results)
+
+
+
+
+
+
+

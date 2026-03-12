@@ -4,9 +4,12 @@
     <h1 class="mb-4">🎤 My Top Artists</h1>
     <ul class="list-group">
         {% for artist in artists %}
-            <li class="list-group-item bg-secondary text-white">
-                {{ loop.index }}. {{ artist[0] }}
-            </li>
+        <li class ="list-group-item bg-secondary text-white">
+            {{ loop.index }}.{{ artist[0] }}
+            {% if artist[1] %} |  Genres: {{ artist[1] if artist[1] else '—' }}
+            | Popularity: {{ artist[2] if artist[2] is not none else '—' }}
+            | Followers: {{ artist[3] if artist[3] is not none else '—' }}
+        </li>
         {% endfor %}
     </ul>
 {% endblock %}

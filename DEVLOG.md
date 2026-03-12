@@ -21,7 +21,13 @@
 - returned top 10 songs to the website by using render template to loop inside of a html file, also used jinja2 syntax.
 
 ## 09 Mar 2026
-- Converted Ms to Minutes using python, added a Music player. Will consider adding a visualiser later with java script and webplay sdk
+- Converted Ms to Minutes using python, added a Music player. Will consider adding a visualiser later with java script and webplay 
+
+## 10 Mar 2026
+- Added an Artists page and functionality to go back and forth between pages.
+
+## 11 Mar 2026
+- 
 
 
 
