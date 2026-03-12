@@ -1,9 +1,16 @@
 # Your-Music-Visualised
 
-A web app that connects to your Spotify account, pulls your listening data, stores it, and shows you dashboards about your music taste — then eventually makes AI-powered recommendations.
+A Flask web app that connects to spotify, stores your listening data and provides you with insightful information.
 
 ## Built With
 - Python
 - Spotify API
-- SQLite
+- SQLite3
 - Flask
+- 
+## Tech Stack
+- Python
+- Flask + Jinja2
+- SQLite3
+- Spotify Web API (Spotipy)
+
