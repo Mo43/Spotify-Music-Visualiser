@@ -5,7 +5,10 @@
     <ul class="list-group">
         {% for song in songs %}
             <li class="list-group-item bg-secondary text-white">
-                {{ loop.index }}. {{ song[0] }} by {{ song[1] }} | {{ song[2] }} | {{ song[3] }}
+                {{ loop.index }}. {{ song[1] }} by {{ song[2] }} | {{ song[3] }} | {{ song[4] }}
+                <a class= "ms-2 link-light" href ="https://open.spotify.com/track/{{ song[0] }}" target="_blank" rel="noopener">
+                    Play 
+                </a>
             </li>
         {% endfor %}
     </ul>

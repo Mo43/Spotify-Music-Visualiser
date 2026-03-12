@@ -27,7 +27,7 @@
 - Added an Artists page and functionality to go back and forth between pages.
 
 ## 11 Mar 2026
-- 
+- Added spotify Links
 
 
 

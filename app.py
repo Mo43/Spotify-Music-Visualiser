@@ -14,10 +14,10 @@ def ms_to_minutes(ms):
 def home():
     conn = sqlite3.connect("music.db")
     cursor = conn.cursor()
-    cursor.execute("SELECT name, artist, albums, duration_ms, popularity FROM tracks")
+    cursor.execute("SELECT id, name, artist, albums, duration_ms, popularity FROM tracks")
     songs = cursor.fetchall()
     conn.close()
-    converted_songs = [(s[0],s[1], s[2], ms_to_minutes(s[3]),s[4]) for s in songs]
+    converted_songs = [(s[0],s[1], s[2], s[3], ms_to_minutes(s[4])) for s in songs]
     return render_template('index.html', songs = converted_songs)
 
 @app.route('/artists')
