@@ -24,7 +24,7 @@ def home():
 def artists():
     conn = sqlite3.connect("music.db")
     cursor = conn.cursor()
-    cursor.execute ("SELECT name, genres, popularity, followers from artists")
+    cursor.execute ("SELECT id, name, genres, popularity, followers from artists")
     artists = cursor.fetchall()
     conn.close()
     return render_template('artists.html', artists=artists)

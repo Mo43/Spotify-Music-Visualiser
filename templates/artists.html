@@ -5,10 +5,8 @@
     <ul class="list-group">
         {% for artist in artists %}
         <li class ="list-group-item bg-secondary text-white">
-            {{ loop.index }}.{{ artist[0] }}
-            {% if artist[1] %} | Genres: {{artist[1] }}{% endif %}
-            | Popularity: {{ artist[2] if artist[2] is not none else '—' }}
-            | Followers: {{ artist[3] if artist[3] is not none else '—' }}
+            {{ loop.index }}. {{ artist[1] }}
+            <a class ="ms-2" href="https://open.spotify.com/artist/{{ artist[1] }}" target="_blank" rel="noopener">View on Spotify </a>
         </li>
         {% endfor %}
     </ul>

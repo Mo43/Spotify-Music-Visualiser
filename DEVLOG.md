@@ -29,6 +29,12 @@
 ## 11 Mar 2026
 - Added spotify Links
 
+## 12 Mar 2026
+- Added Nav Bar.
+- replaced empty api call sections with Spotify Artist Links
+
+
+
 
 
 
