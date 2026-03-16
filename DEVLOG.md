@@ -33,6 +33,11 @@
 - Added Nav Bar.
 - replaced empty api call sections with Spotify Artist Links
 
+## 16 Mar 2026
+
+
+
+
 
 
 
