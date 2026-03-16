@@ -34,6 +34,20 @@
 - replaced empty api call sections with Spotify Artist Links
 
 ## 16 Mar 2026
+- added insight top track and length
+- added avg track length
+- added number of top artists
+- added tiles for all 3 new features.
+- cleaned up ui
+
+## 17th
+- need to change color scheme, change color and polish webpage and table.
+- add lastfm api and spotify api to generate graphs and more features. 
+
+
+
+
+
 
 
 

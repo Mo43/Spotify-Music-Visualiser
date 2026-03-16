@@ -1,12 +1,23 @@
 {% extends "base.html" %}
-
 {% block content %}
     <h1 class="mb-4">🎤 My Top Artists</h1>
-    <ul class="list-group">
+    <!-- Stat tiles for key insights -->
+    <div class="row g-3 mb-3">
+      <div class="col-12 col-md-6">
+        <div class="card bg-dark border-secondary h-100">
+          <div class="card-body py-2">
+            <h6 class="text-white-50 mb-1">Top Artists:</h6>
+            <p class="mb-0 text-light fw-semibold">{{ artists_insight }}</p>
+          </div>
+        </div>
+      </div>
+    <ul class = "list-group">
         {% for artist in artists %}
         <li class ="list-group-item bg-secondary text-white">
             {{ loop.index }}. {{ artist[1] }}
-            <a class ="ms-2" href="https://open.spotify.com/artist/{{ artist[1] }}" target="_blank" rel="noopener">View on Spotify </a>
+            <a class="ms-2 link-light" href="https://open.spotify.com/artist/{{ artist[0] }}" target="_blank" rel="noopener">
+    View on Spotify
+</a>
         </li>
         {% endfor %}
     </ul>

@@ -1,15 +1,39 @@
 {% extends "base.html" %}
-
 {% block content %}
     <h1 class="mb-4">🎵 My Top Tracks</h1>
-    <ul class="list-group">
+    <!-- Stat tiles for key insights -->
+    <div class="row g-3 mb-3">
+      <div class="col-12 col-md-6">
+        <div class="card bg-dark border-secondary h-100">
+          <div class="card-body py-2">
+            <h6 class="text-white-50 mb-1">Longest track:</h6>
+            <p class="mb-0 text-light fw-semibold">{{ insight }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card bg-dark border-secondary h-100">
+          <div class="card-body py-2">
+            <h6 class="text-white-50 mb-1">Average track length:</h6>
+            <p class="mb-0 text-light fw-semibold">{{ average_insight }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top tracks list -->
+    <div class="card bg-dark border-secondary mt-3">
+      <div class="card-header text-white-50">
+        Top Tracks
+      </div>
+      <ul class="list-group list-group-flush">
         {% for song in songs %}
-            <li class="list-group-item bg-secondary text-white">
-                {{ loop.index }}. {{ song[1] }} by {{ song[2] }} | {{ song[3] }} | {{ song[4] }}
-                <a class= "ms-2 link-light" href ="https://open.spotify.com/track/{{ song[0] }}" target="_blank" rel="noopener">
-                    Play 
-                </a>
-            </li>
+          <li class="list-group-item bg-secondary text-white">
+            {{ loop.index }}. {{ song[1] }} by {{ song[2] }} | {{ song[3] }} | {{ song[4] }}
+            <a class="ms-2 link-light" href="https://open.spotify.com/track/{{ song[0] }}" target="_blank" rel="noopener">
+              Play
+            </a>
+          </li>
         {% endfor %}
-    </ul>
+      </ul>
+    </div>
 {% endblock %}
