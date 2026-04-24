@@ -42,7 +42,11 @@
 
 ## 17th
 - need to change color scheme, change color and polish webpage and table.
-- add lastfm api and spotify api to generate graphs and more features. 
+- add lastfm api and spotify api to generate graphs and more features.
+- add pytests, research cd/cd
+- upload for users
+
+
 
 
 
