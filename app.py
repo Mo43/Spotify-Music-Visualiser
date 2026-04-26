@@ -123,7 +123,7 @@ def artists():
     return render_template('artists.html', artists=artists, artists_insight = artists_insight)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8888)
 
 
 
