@@ -7,7 +7,8 @@ import sqlite3
 from dotenv import load_dotenv
 load_dotenv()
 print("REDIRECT_URI:", os.getenv("REDIRECT_URI"))
-from database import setup_database
+from database import setup_database, setup_artists_table, save_artists
+
 
 
 app = Flask(__name__)
@@ -64,6 +65,9 @@ def home():
     if token:
         sp = spotipy.Spotify(auth=token)
         top_tracks = sp.current_user_top_tracks(limit=10)
+        top_artists = sp.current_user_top_artists(limit=10)
+        setup_artists_table()
+        save_artists(top_artists)
         setup_database()
         print(sp.current_user()['display_name'])
         
@@ -123,7 +127,7 @@ def artists():
     return render_template('artists.html', artists=artists, artists_insight = artists_insight)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8888)
+    app.run(debug=True, port=5000)
 
 
 
