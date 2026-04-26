@@ -15,12 +15,11 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 
 results = sp.current_user_top_tracks(limit=10)
 artist_results = sp.current_user_top_artists(limit=10)
-for i, track in enumerate(results['items']):
-    print(i+1, track['name'], "by", track['artists'][0]['name'])
+#for i, track in enumerate(results['items']):
+  #  print(i+1, track['name'], "by", track['artists'][0]['name'])
 
-for i, artist in enumerate(artist_results['items']):
-    print(i+1, artist['name'])
-
+#for i, artist in enumerate(artist_results['items']):
+    #print(i+1, artist['name'])
 
 
 setup_database()
