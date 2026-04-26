@@ -8,8 +8,17 @@ from dotenv import load_dotenv
 load_dotenv()
 print("REDIRECT_URI:", os.getenv("REDIRECT_URI"))
 from database import setup_database, setup_artists_table, save_artists
+from spotipy.cache_handler import CacheHandler
 
-
+class FlaskSessionCacheHandler(CacheHandler):
+    def __init__(self, session, key="token_info"):
+        self.session = session
+        self.key = key
+    def get_cached_token(self):
+        return self.session.get(self.key)
+    
+    def save_token_to_cache(self,token_info):
+        self.session[self.key] = token_info
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
@@ -26,7 +35,7 @@ sp_oauth = SpotifyOAuth(
     client_secret = client_secret,
     redirect_uri = redirect_uri,
     scope = "user-top-read",
-    cache_handler=None
+    cache_handler=FlaskSessionCacheHandler(session),
 )
 def ms_to_minutes(ms):
     if ms is None:
@@ -73,6 +82,22 @@ def home():
         
         conn = sqlite3.connect("music.db")
         cursor = conn.cursor()
+        cursor.execute("DELETE FROM artists")
+        for artist in top_artists["items"]:
+            cursor.execute(
+                """
+                INSERT INTO artists (id, name, genres, popularity, followers)
+                VALUES (?, ?, ?, ?, ?)
+                """, (
+                    artist["id"],
+                    artist["name"],
+                    ", ".join(artist.get("genres", [])),
+                    artist.get("popularity", 0),
+                    (artist.get("followers") or {}).get("total", 0),
+            ),
+        )
+                    
+                
         
         cursor.execute("DELETE FROM tracks")
         for item in top_tracks['items']:
