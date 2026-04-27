@@ -5,4 +5,4 @@ A Flask web app that connects to spotify, stores your listening data and provide
 - Python
 - Flask + Jinja2
 - SQLite3
-- Spotify Web API (Spotipy)s
+- Spotify Web API (Spotipy)
