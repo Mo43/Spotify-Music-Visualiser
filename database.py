@@ -15,7 +15,7 @@ def setup_database():
     ''')
     conn.commit()
     conn.close()
-       
+    
 def save_tracks(results):
     conn = sqlite3.connect("music.db")
     cursor = conn.cursor()
