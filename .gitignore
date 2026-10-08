@@ -1,6 +1,7 @@
 .env
-venv/
-__pycache__/
-*.pyc
-music.db
 .cache
+music.db
+explore_output/
+__pycache__/
+venv/
+.venv/
