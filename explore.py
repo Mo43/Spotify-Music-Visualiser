@@ -15,9 +15,10 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 
 recent = sp.current_user_recently_played(limit=5)
 play=recent['items'][0]
-print(play['track'].keys())
+print(json.dumps(recent['items'][0], indent=2))
 
-#print(json.dumps(recent['items'][0], indent=2))
+#print(play['track'].keys())
+
 
 #for item in recent['items']:
     #print(f"{item['played_at']} | {item['track']['name']} | {item['track']['album']['name']} | {item['track']['artists'][0]['name']}")
